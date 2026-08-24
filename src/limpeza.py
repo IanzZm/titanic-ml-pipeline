@@ -12,9 +12,8 @@ def carregar_e_limpar() -> pd.DataFrame:
 
     # convertendo as colunas para os tipos otimizados
     df['alive'] = df['alive'] == 'yes'
-    df['sex'] = df['sex'].astype('category')
     df['pclass'] = df['pclass'].astype('category')
-    df['sex'] = df['sex'].map({'male': 0, 'female': 1})
+    df['sex'] = df['sex'].map({'male': 0, 'female': 1}).astype(int)
 
 
     portos_info = pd.DataFrame({
